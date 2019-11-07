@@ -1,4 +1,3 @@
-# Write your code here.
 
 def conference_badges(badge)
   return badge
@@ -31,7 +30,4 @@ end
 def printer(attendees)
   batch_badge_creator(attendees).each { |message| puts message }
   assign_rooms(attendees).each { |room_assignment| puts room_assignment }
-  
-  
-  
 end
