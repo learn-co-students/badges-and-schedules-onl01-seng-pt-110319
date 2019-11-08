@@ -1,3 +1,5 @@
+require 'pry'
+
 def badge_maker(name)
   "Hello, my name is #{name}."
 end
@@ -10,14 +12,17 @@ def batch_badge_creator(attendees)
 end
 
 def assign_rooms(attendees)
-  rooms = [1, 2, 3, 4, 5, 6, 7]
   room_assignment = []
-  # attendees.each {|attendees| rooms.each {|rooms| room_assignment << "Hello, #{attendees}! You'll be assigned to room #{rooms}!"}}
-  
-  attendees.each do |attendees|
-    rooms.each do |rooms|
-      room_assignment << "Hello, #{attendees}! You'll be assigned to room #{room_assignment}!"
+  counter = 0
+  while counter < attendees.count do 
+    room_assignment << "Hello, #{attendees[counter]}! You'll be assigned to room #{counter + 1}!"
+    counter += 1 
   end
-end
   room_assignment
+end
+
+def printer(attendees)
+  batch_badge_creator(attendees).each {|batch_badge_creator| puts batch_badge_creator}
+  assign_rooms(attendees).each {|assign_rooms| puts assign_rooms}
+  
 end
